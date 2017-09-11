@@ -64,4 +64,11 @@ contract Splitter {
 		return true;
 		
 	}
+
+	function terminate()
+		public
+	{
+		if (msg.sender != owner) throw;
+		suicide(owner);
+	}
 }
