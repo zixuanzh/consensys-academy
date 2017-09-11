@@ -1,0 +1,25 @@
+{
+  "name": "consensys-academy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zixuanzh/consensys-academy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zixuanzh/consensys-academy/issues"
+  },
+  "homepage": "https://github.com/zixuanzh/consensys-academy#readme",
+  "dependencies": {
+    "truffle-default-builder": "^2.0.0"
+  }
+}
