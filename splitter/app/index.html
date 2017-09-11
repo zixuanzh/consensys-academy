@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="." />
+	<title>Campaign</title>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="./app.css" />
+
+	<script src="./app.js"></script>
+</head>
+<body ng-cloak ng-controller="campaignController">
+	<h3>Hello World</h3>
+
+	<div class="container-fluid">
+		<div class＝"row">
+			<div class="col-md-12">
+			
+			<h3><span class="black">Campaign</span>Status</h3>
+			<h6>Your Account: {{ account }}: {{ balance }} (Wei) {{ balanceInEth }} (ETH)</h6>
+			<h6>Contract Address: {{ contract.address }}</h6>
+			<h4>
+				Funds Raised: {{ campaignFundsRaised }}
+				Deadline: {{ campaignDeadline }}
+				Goal: {{ campaignGoal }}
+				BlockNumber: {{ blockNumber }}
+				<div class="green" ng-if="campaignIsSuccess">Success!</div>
+				<div class="red" ng-if="campaignHasFailed">Failed!</div>
+			</h4>
+
+			<form id="contributeForm" ng-submit="contribute()">
+				<input type="type " name="newContribution" ng-model="newContribution" required />
+				<input type="submit" class="btn btn-primary" value="Contribute" />
+			</form>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<table class="table table-striped table-bordered">
+
+						<tr>
+							<th>Funder</th>
+							<th>Block</th>
+							<th>Amount</th>
+						</tr>
+
+						<tr ng-repeat="contribution in contributionLog">
+							<td>{{ contribution.args.sender }}</td>
+							<td>{{ contribution.blockNumber }}</td>
+							<td>{{ contribution.args.amount }}</td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		window.addEventListener('load', function() {
+			angular.bootstrap(document, ['campaignApp']);
+		})
+	</script>
+
+</body>
+</html>

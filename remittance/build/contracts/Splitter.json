@@ -1,0 +1,151 @@
+{
+  "contract_name": "Splitter",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_receiver1",
+          "type": "address"
+        },
+        {
+          "name": "_receiver2",
+          "type": "address"
+        }
+      ],
+      "name": "split",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balances",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "withdrawAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "creator",
+          "type": "address"
+        }
+      ],
+      "name": "LogDeployedEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "receiver1",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "receiver2",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "totalAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "remainder",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogSplitEvent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "withdrawer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "withdrawAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "remainder",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogWithdrawEvent",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x606060405234610000575b60008054600160a060020a033316600160a060020a0319909116811790915560408051918252517fc5eaa6e500a09419ef507c1a17d04ddb6bee3ce545381ff0199299a4e4caa6629181900360200190a15b5b6102c98061006c6000396000f300606060405263ffffffff60e060020a6000350416630f2c9329811461004557806327e235e3146100735780632e1a7d4d1461009e5780638da5cb5b146100c2575b610000565b61005f600160a060020a03600435811690602435166100eb565b604080519115158252519081900360200190f35b346100005761008c600160a060020a03600435166101ab565b60408051918252519081900360200190f35b346100005761005f6004356101bd565b604080519115158252519081900360200190f35b34610000576100cf61028e565b60408051600160a060020a039092168252519081900360200190f35b600080803415156100fb57610000565b5050600160a060020a038381166000818152600160209081526040808320805460023481810492830190935589881680875284872080548401905533909816808752958490208054918302840391820190558351958652938501959095528382019590955260608301949094526080820181905292519192917f42111380b55c34155a75b9fc77f1f175e94eaa81e26f7e910f5fdbe287411d049181900360a00190a1600192505b505092915050565b60016020526000908152604090205481565b6000808215156101cc57610000565b600160a060020a033316600090815260016020526040902054839010156101f257610000565b50600160a060020a033316600081815260016020526040808220805486900390819055905190929185156108fc02918691818181858888f19350505050151561023a57610000565b60408051600160a060020a03331681526020810185905280820183905290517fcb8caabbc7fc51a3820ba055731f32c1605624f722b6c20ca6fe4b0be53f71119181900360600190a1600191505b50919050565b600054600160a060020a0316815600a165627a7a72305820df92d641e3bb7d26d737d5aa75c46abf0778e5c67e337f273ec647d075f512750029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1505095082468
+}

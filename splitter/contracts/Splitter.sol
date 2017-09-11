@@ -13,16 +13,33 @@ contract Splitter {
 		owner = msg.sender;
 		LogDeployedEvent(msg.sender);
 	}
+	
+	function getBalance(address _address)
+	    public
+	    constant
+	    returns (uint balance) 
+    {
+        return balances[_address];   
+	}
 
 	function split(address _receiver1, address _receiver2)
 		public
 		payable
 		returns (bool success) 
 	{
+		// not sure how to check validity of _receiver1 and _receiver2
 		if (msg.value == 0) throw;
 
-		uint amountToReceive = msg.value / 2;
-		uint remainder = msg.value - (2 * amountToReceive);
+		uint amountToReceive;
+		uint remainder;
+
+		if (msg.value % 2 == 0) {
+			amountToReceive = msg.value / 2;
+			remainder = 0;
+		} else {
+			amountToReceive = (msg.value - 1) / 2;
+			remainder = 1;
+		}
 
 		balances[_receiver1] += amountToReceive;
 		balances[_receiver2] += amountToReceive;
